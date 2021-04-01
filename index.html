@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Spending Tracker App</title>
+</head>
+<body>
+    <div class="container">
+        <img src="pig.png" alt="pig img">
+        <!-- header section -->
+        <div class="spending-container">
+            <div class="inc-exp-container">
+                <div class="income">
+                    <h3>Income</h3>
+                    <p class="money-plus">£0.0</p>
+                </div>
+
+                <div class="expense">
+                    <h3>Expense</h3>
+                    <p class="money-minus">£0.0</p>
+                </div>
+            </div>
+
+            <div class="balance">
+                <h3>Balance</h3>
+                <p class="money-balance">£0.0</p>
+            </div>
+
+            <!-- Add income/expense section -->
+            <div class="buttons">
+                <div class="btn1">
+                    <form class="form">
+                        <div class="form-control">
+                            <label for="text">Text</label>
+                            <select name="txt" id="select">
+                                <option value="choose" selected>Choose Your Spending</option>
+                                <option value="Salary">Salary</option>
+                                <option value="Carry Over">Carry Over</option>
+                                <option value="Deposits">Deposits</option>
+                                <option value="Saving">Saving</option>
+                                <option value="Eating Out">Eating Out</option>
+                                <option value="Gifts">Gifts</option>
+                                <option value="Clothes">Clothes</option>
+                                <option value="Entertainment">Entertainment</option>
+                                <option value="Fuel">Fuel</option>
+                                <option value="Holidays">Holidays</option>
+                                <option value="Kids">Kids</option>
+                                <option value="Shopping">Shopping</option>
+                                <option value="Sports">Sports</option>
+                                <option value="Travel">Travel</option>
+                                <option value="Car">Car</option>
+                                <option value="Health">Health</option>
+                                <option value="House">House</option>
+                                <option value="Others">Others</option>
+
+                            </select>
+                        </div>
+                
+                        <div class="form-control">
+                            <label for="amount">Amount<br> (negetive - expense,positive - income)</label>
+                            <input type="number" id="amount" placeholder="Enter Amount..."> 
+                        </div>
+                
+                        <button class="btn">Add Transaction</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- History section -->
+            <div class="history-container">
+                <div class="sort-title">
+                    <h3 class="history-title">Transactions:</h3>
+                    
+                    <div class="dropdown">
+                        <button class="btn" type="button" id="sort-btn">Sort By</button>
+                        <div class="menu">
+                          <a class="item item-lowest" href="#">Amount(Lowest First)</a>
+                          <a class="item item-highest" href="#">Amount(Highest First)</a>
+                          <a class="item item-A" href="#">Category(A-Z)</a>
+                          <a class="item item-B" href="#">Category(Z-A)</a>
+                        </div>
+                      </div>
+                    <!--  -->
+                </div>
+                
+                <ul id="list" class="list">
+                    <!-- <li class="minus">Cash<span>-$400</span>
+                        <button class="delete-btn">X</button>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Chart section -->
+        <div class="canvas">
+            <canvas id="chart"></canvas>
+        </div>
+    </div>
+    
+
+
+    <script src="app.js"></script>
+</body>
+</html>
